@@ -53,7 +53,7 @@ class PopulateDatabaseCommand extends Command
         for ($i = 1; $i <= 2; $i++) {
             $company = Company::create([
                 'name' => $this->faker->company,
-                'phone' => $this->faker->phoneNumber ?? 'N/A',
+                'phone' => $this->faker->phoneNumber,
                 'email' => $this->faker->companyEmail,
                 'website' => $this->faker->url,
                 'image' => $this->faker->imageUrl(),
@@ -69,12 +69,12 @@ class PopulateDatabaseCommand extends Command
                     'zip_code' => $this->faker->postcode,
                     'country' => $this->faker->country,
                     'email' => $this->faker->companyEmail,
-                    'phone' => $this->faker->phoneNumber ?? 'N/A',
+                    'phone' => $this->faker->phoneNumber,
                     'company_id' => $company->id,
                     'created_at' => $this->faker->dateTimeThisYear,
                     'updated_at' => $this->faker->dateTimeThisYear,
                 ]);
-
+$output->writeln($office->phone);
                 $company->offices()->save($office);
             }
 
@@ -87,7 +87,7 @@ class PopulateDatabaseCommand extends Command
                 'last_name' => $this->faker->lastName,
                 'office_id' => Office::inRandomOrder()->first()->id,
                 'email' => $this->faker->email,
-                'phone' => $this->faker->phoneNumber ?? 'N/A',
+                'phone' => $this->faker->phoneNumber,
                 'job_title' => $this->faker->jobTitle,
                 'created_at' => $this->faker->dateTimeThisYear,
                 'updated_at' => $this->faker->dateTimeThisYear,

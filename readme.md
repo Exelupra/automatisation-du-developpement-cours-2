@@ -6,11 +6,19 @@ Il permet de lister plusieurs entreprises, et d'en voir leur bureaux et employé
 ## Modification du projet
 Pour lancer les commande de l'application, il faut utiliser le script
 
+**Lancer le composer**
+`composer install`
 **Supprimer et re-créer la base de données**  
 `docker compose run --rm php php bin/console db:create`
 
 **Alimenter la base de données**  
 `docker compose run --rm php php bin/console db:create`
+
+**Lancer vite.conf afin de mettre à jour les fichiers css et js**
+`npm run dev`
+
+**Lancer le docker**
+`docker compose up`
 
 ## Technologies utilisées
 - PHP 8.2
